@@ -1,5 +1,5 @@
 """
-Amanda Tan
+Ethan Sie
 Elmo's Cheez-it
 SoftDev
 K04 -- Python dictionairies and random selection
