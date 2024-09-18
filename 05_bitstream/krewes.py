@@ -11,6 +11,7 @@ import random
 
 f = open("krewes.txt", "r")
 people = f.read().replace("\n", "").split('@@@')
+people = people[:len(people)-1]
 for count, person in enumerate(people):
     people[count] = person.split('$$$')
     people[count] = {"period":people[count][0], "devo":people[count][1], "ducky":people[count][2]}
