@@ -26,7 +26,7 @@ print(people)
 p4Peeps = []
 p4Duckys = []
 for person in people:
-    if person.get("period") == '4':
+    if person.get("period") == '05':
         p4Peeps.append(person.get("devo"))
         p4Duckys.append(person.get("ducky"))
 print(p4Peeps)
