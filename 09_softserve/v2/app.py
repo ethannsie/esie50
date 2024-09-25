@@ -1,6 +1,10 @@
-# Clyde 'Thluffy' Sinclair
-# SoftDev
-# September 2024
+'''Ethan Sie, Marco Quintero, Ankita Saha, Colyi Chen
+  Trojan Horses
+  SoftDev
+  running basic flask scripts and noting differences/comments
+  2024-9-23
+  time spent: 0.1 hours
+  '''
 
 from flask import Flask
 app = Flask(__name__)             #create instance of class Flask
