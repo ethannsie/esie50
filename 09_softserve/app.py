@@ -48,10 +48,10 @@ def hello_world():
     numJobData = jobData[1:len(jobData)-1]
     dictValues = splitHeaders(numJobData)
     randJob = randomizeJob(dictValues)
-    jobList = "" 
+    jobList = "<table><tr><th>Job List</th></tr>"
     for job in dictValues.keys():
-        jobList += job + "<br>"
-    return "Trojan Horses: Ethan Sie, Ankita Saha, Marco Quintero, Colyi Chen<br>Randomly Chosen Job: " + randJob + "<br>Job List: <br>" + jobList
+        jobList += "<tr><td>" + job + "</td></tr>"
+    return "<head><style>table, th, td {border: 1px solid black;}</style></head><body><h1>Trojan Horses: Ethan Sie, Ankita Saha, Marco Quintero, Colyi Chen</h1>Randomly Chosen Job: " + randJob + "<br><br>" + jobList + "</table>"
 
 if __name__ == "__main__":      # true if this file NOT imported
     app.debug = True            # enable auto-reload upon code change; We found this to be true and also that the debugger will print to the terminal that the code has been changed
