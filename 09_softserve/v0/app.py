@@ -1,14 +1,15 @@
-# Clyde 'Thluffy' Sinclair
+# Ethan Sie
+# Trojan Horses
 # SoftDev
 # September 2024
 
 from flask import Flask
-app = Flask(__name__)          # ...
+app = Flask(__name__)          # Creates an instance of a class
 
-@app.route("/")                # ...
+@app.route("/")                # Maps the url to "/"
 def hello_world():
-    print(__name__)            # ...
-    return "No hablo queso!"   # ...
+    print(__name__)            # Prints the current page to the terminal; Our prediction was correct
+    return "No hablo queso!"   # Prints "No hablo queso!" to the server; Prediction was correct
 
-app.run()                      # ...
+app.run()                     # Runs the app object; Correct prediction
                 

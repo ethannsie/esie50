@@ -7,6 +7,6 @@ app = Flask(__name__)            #create instance of class Flask
 
 @app.route("/")                  #assign fxn to route
 def hello_world():
-    return "No hablo queso!"
+    return "No hablo queso!"     #With no print statement, the current __name__ will not be printed into the terminal
 
 app.run()

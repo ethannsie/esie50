@@ -12,5 +12,5 @@ def hello_world():
     return "No hablo queso!"
 
 if __name__ == "__main__":      # true if this file NOT imported
-    app.debug = True            # enable auto-reload upon code change
+    app.debug = True            # enable auto-reload upon code change; We found this to be true and also that the debugger will print to the terminal that the code has been changed
     app.run()
