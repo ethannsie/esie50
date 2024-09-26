@@ -1,6 +1,11 @@
-# Clyde 'Thluffy' Sinclair
-# SoftDev
-# Sep 2024
+"""
+Ethan Sie
+Elmos_Cheez-its
+SoftDev
+K12 - flask jinja
+2024-09-26
+time spent: 0.6
+"""
 
 """
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
