@@ -1,10 +1,10 @@
 """
-Aidan Wong
+Ethan Sie
 Elmos_Cheez-its
 SoftDev
 K11 - Static Flask Pages
 2024-09-25
-time spent: 
+time spent: 0.5
 """
 
 # DEMO

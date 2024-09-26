@@ -8,10 +8,11 @@ Q0:
 Prediction: If we remove render_template, then test_tmplt() won't be able to use the render_template package, and there  would be no output on the "/my_foist_template" page.
 Results: The "my_foist_template" page encounted the following error message: "NameError: name 'render_template' is not defined."
 Q1:
-Prediction: 
-
+Prediction: Yes, we can all predict the url: "127.0.0.1:5000/my_foist_template"
+Results: We were correct.
 Q2:
-<your response here>
+Predictions: Argument 1: The model template html displayed on the server; Argument 2: The title/name displayed of the server; Argument 3: Takes in data to be applied
+Results: Argument 1: We were correct; Argument 2: It was displayed on the tab; Argument 3: We were correct
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 """
 
@@ -38,9 +39,10 @@ def test_tmplt():
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # Q2: What is the significance of each argument? Simplest, most concise answer best.
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    return render_template( 'model_tmplt.html', foo="fooooo", collection=coll)
+    return render_template( 'model_tmplt.html', collection=coll, foo = "fooooo")
 
 
 if __name__ == "__main__":
     app.debug = True
     app.run()
+
