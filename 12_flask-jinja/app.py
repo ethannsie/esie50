@@ -20,8 +20,21 @@ Predictions: Argument 1: The model template html displayed on the server; Argume
 Results: Argument 1: We were correct; Argument 2: It was displayed on the tab; Argument 3: We were correct
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 """
-
-
+"""
+Observations:
+1. render_template is used for templating HTML files and making it easy to only change a small part of it while keeping other elements the same
+2. Jinja is used to allow variables and add functionality such as loops to HTML documents
+3. Variable order (besides the first one that declares the HTML template) does not matter (runs the same with the variables after the first argument mixed)
+4. Variables in the HTML template are surrounded by {{}} as an indicator
+5. Loops in the HTML template need to be closed (Kind of like HTML format)
+6. You can use HTML elements in Jinja loops
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+QCC:
+1. Are there any limitations in the types of variables that can be passed through render_template? 
+2. How does flask recognize when it is Jinja and not just plaintext? (Ex. When user wants to print {{}} and not use Jinja)
+3. How does it combine loop elements with HTML elements (template file loops and repeatedly prints a break after each argument)
+4. Does render_template return the HTML elements as a string or the HTML file itself?
+"""
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Q0: What will happen if you remove render_template from the following statement?
