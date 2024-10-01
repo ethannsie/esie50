@@ -18,11 +18,18 @@ th, td {
   <head>
     <title> {{ foo }} </title>
   </head>
-
+  <h1> 
+  {{teamname}}
+  </h1>
+  <h3>
+    {% for item in teamMembers %}
+       {{ item }} <br>
+    {% endfor %}
+  </h3>
   <body>
 	<table>
 	    {% for item in collection %}
-	    <tr><td> {{ item }} </td></tr>
+	    <tr><td> {{ item }} </td><td> Link </td></tr>
 	    {% endfor %}
 	</table>
   </body>

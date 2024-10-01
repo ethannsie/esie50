@@ -1,66 +1,63 @@
-"""
-Ethan Sie
-Elmos_Cheez-its
-SoftDev
-K12 - flask jinja
-2024-09-26
-time spent: 0.6
-"""
+#Leon Huang, Evan CHan, Ethan Sie
+#The Grizzly Bears
+#SoftDev
+#K13 - Combine
+#2024-9-30
+#Time Spent: TBD
 
-"""
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Q0:
-Prediction: If we remove render_template, then test_tmplt() won't be able to use the render_template package, and there  would be no output on the "/my_foist_template" page.
-Results: The "my_foist_template" page encounted the following error message: "NameError: name 'render_template' is not defined."
-Q1:
-Prediction: Yes, we can all predict the url: "127.0.0.1:5000/my_foist_template"
-Results: We were correct.
-Q2:
-Predictions: Argument 1: The model template html displayed on the server; Argument 2: The title/name displayed of the server; Argument 3: Takes in data to be applied
-Results: Argument 1: We were correct; Argument 2: It was displayed on the tab; Argument 3: We were correct
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-"""
-"""
-Observations:
-1. render_template is used for templating HTML files and making it easy to only change a small part of it while keeping other elements the same
-2. Jinja is used to allow variables and add functionality such as loops to HTML documents
-3. Variable order (besides the first one that declares the HTML template) does not matter (runs the same with the variables after the first argument mixed)
-4. Variables in the HTML template are surrounded by {{}} as an indicator
-5. Loops in the HTML template need to be closed (Kind of like HTML format)
-6. You can use HTML elements in Jinja loops
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-QCC:
-1. Are there any limitations in the types of variables that can be passed through render_template? 
-2. How does flask recognize when it is Jinja and not just plaintext? (Ex. When user wants to print {{}} and not use Jinja)
-3. How does it combine loop elements with HTML elements (template file loops and repeatedly prints a break after each argument)
-4. Does render_template return the HTML elements as a string or the HTML file itself?
-"""
-
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Q0: What will happen if you remove render_template from the following statement?
-# (log prediction before executing...)
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from flask import Flask, render_template
-app = Flask(__name__)
+import random
+import csv
+
+################################# Code from Dancing Elmos!
+
+def fileParser(file): #reads csv
+    with open(file, newline='') as csvfile:
+        csvFile = csv.reader(csvfile, delimiter='\n')
+        data = []
+        for line in csvFile:
+            data.append(line) # Puts all of the data from the csv into the list
+    return data
+
+def splitHeaders(dataSet): #converts data to dictionary
+    dictValues = {}
+    for data in dataSet:
+        for string in data:
+            for count, letter in enumerate(string[:len(string)-1]):
+                if letter == ',' and string[count+1].isnumeric():
+                    dictValues[string[:count]] = float(string[count+1:]) #Takes each input and enters it as a Job:Percentage dictionary
+    return dictValues
+
+def randomizeJob(dict): #randomizes job, weighted
+    randVal = random.uniform(0,99.8)
+    for data in dict:
+        randVal -= dict[data]
+        if(randVal <= 0):
+            return data
+
+###################################################
+
+app = Flask(__name__)           #create instance of class Flask
+
+CSV_FILE_PATH = 'data/occupations.csv'
 
 @app.route("/")
-def hello_world():
-    return "No hablo queso!"
+def showHome():
+    return "Welcome to the abyss"
 
-coll = [0,1,1,2,3,5,8]
+@app.route("/wdywtbwygp")
+def showT():
+    jobData = fileParser(CSV_FILE_PATH) #Parses csv data
+    headers = jobData[0][0].split(',') #Initial delimit
+    numJobData = jobData[1:len(jobData)-1] #Cuts out the header and "Total"
+    dictValues = splitHeaders(numJobData) #Converts into dictinoary
+    randJob = randomizeJob(dictValues) #Finds random job
+    team = ["Ethan Sie", "Evan Chan", "Leon Huang"]
+    return render_template('tablified.html', teamMembers = team, foo="Grow up", teamname="The Grizzly Bears",collection = dictValues.keys())
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# Q1: Can all of your teammates confidently predict the URL to use to load this page?
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-@app.route("/my_foist_template") 
-def test_tmplt():
-    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    # Q2: What is the significance of each argument? Simplest, most concise answer best.
-    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    return render_template( 'model_tmplt.html', collection=coll, foo = "fooooo")
+
 
 
 if __name__ == "__main__":
     app.debug = True
     app.run()
-
