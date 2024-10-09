@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+    Finding Elmo: Ethan Sie, Aidan Wong, Qianjun Zhou
+    SoftDev
+    K15 - Flask Inputs With Different Requests
+    2024-10-08
+    time spent: 0.8
+ -->
+
+
+<html>
+
+  <head>
+    <title> Elmo's Door </title>
+  </head>
+
+  <body>
+    <h1>
+        Finding Elmo: Ethan Sie, Aidan Wong, Qianjun Zhou
+    </h1>
+    <h3>
+      Hi! Give me your name to enter my house.
+    </h3>
+    <form action="/auth" method="GET">
+      <input type="text" name="name">
+      <input type="submit" name="sub1" value="Enter with GET">
+    </form>
+    <br>
+    <form action="/auth" method="POST">
+        <input type="text" name="name">
+        <input type="submit" name="sub1" value="Enter with POST">
+      </form>
+    <br>
+  </body>
+
+</html>
