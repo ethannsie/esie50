@@ -1,7 +1,7 @@
 ## K15: Take & Give
 ### Due: 2024-10-09w before class
 
-Your Trio Mission: 
+Your Trio Mission:
 
 _Step 0: Come together. "Form like Voltron." Learn each others' names. Introduce Duckies, fetch KtS..._
 

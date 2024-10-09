@@ -1,42 +1,35 @@
 <!DOCTYPE html>
-<!-- 
-  Elmos_Cheez-its: Amanda Tan, Ethan Sie, Aidan Wong
-  SoftDev
-  K14 - User Input with Flask
-  2024-10-07
-  time spent: 0.7
-
-     simple demo of HTML forms via Flask
-     
-     trioTASK:
-     If any member of team has forms experience, let their know-how OSMOTE.
-     If no one does, seek external assistance.
-     
-     PROTIP: Revisit code from foundations if you have it.
-     Peruse this code together and discuss how it should work,
-       in conjunction with the back end apparatus.
+<!--
+    Finding Elmo: Ethan Sie, Aidan Wong, Qianjun Zhou
+    SoftDev
+    K15 - Flask Inputs With Different Requests
+    2024-10-08
+    time spent: 0.8
  -->
 
 
 <html>
 
   <head>
-    <title> LOGIN PAGE </title>
+    <title> Elmo's Door </title>
   </head>
 
   <body>
     <h1>
-      Howdy, friends!
+        Finding Elmo: Ethan Sie, Aidan Wong, Qianjun Zhou
     </h1>
-
-
     <h3>
-      Enter your username below to proceed.
+      Hi! Give me your name to enter my house.
     </h3>
-    <form action="/auth">
-      <input type="text" name="username">
-      <input type="submit" name="sub1">
+    <form action="/auth" method="GET">
+      <input type="text" name="name">
+      <input type="submit" name="sub1" value="Enter with GET">
     </form>
+    <br>
+    <form action="/auth" method="POST">
+        <input type="text" name="name">
+        <input type="submit" name="sub1" value="Enter with POST">
+      </form>
     <br>
   </body>
 

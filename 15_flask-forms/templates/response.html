@@ -1,43 +1,36 @@
 <!DOCTYPE html>
 <!--
-  Elmos_Cheez-its: Amanda Tan, Ethan Sie, Aidan Wong
-  SoftDev
-  K14 - User Input with Flask
-  2024-10-07
-  time spent: 0.7
-
-     simple demo of HTML forms via Flask
-
-     trioTASK:
-     If any member of team has forms experience, let their know-how OSMOTE.
-     If no one does, seek external assistance.
-
-     PROTIP: Revisit code from foundations if you have it.
-     Peruse this code together and discuss how it should work,
-       in conjunction with the back end apparatus.
+    Finding Elmo: Ethan Sie, Aidan Wong, Qianjun Zhou
+    SoftDev
+    K15 - Flask Inputs With Different Requests
+    2024-10-08
+    time spent: 0.8
  -->
 
 
 <html>
-
   <head>
-    <title> LOGIN PAGE </title>
+    <title> Elmo's Home </title>
   </head>
-
   <body>
-    <h1>
-      Howdy, friends!
-    </h1>
+    <h1>Finding Elmo: Ethan Sie, Aidan Wong, Qianjun Zhou</h1>
+    {% if request.method == 'POST' %}
+        <h3>Hi {{name}}! I'm Elmo!</h3>
+        <p>
+            You came into my house using the POST method. <br><br>
+            This method sends data submits data through the "request body", which is why the method required to request a paramater uses request.form.get instead of request.args.get (which is what GET uses).  <br><br>
+            If you used the GET method to enter, the only visible difference would be that the information you submitted would be visibile in the URL, shown after the "?". This is because the GET method sends data through the URL as query parameters (which is the stuff after the "?"). <br><br>
+            Notice how a form resubmission confirmation pop up appears when this page is refreshed. This is due to the POST request, which relies on the dynamic information in the request body, and needs the data to be re-entered into the request body to be used. GET dosen't need this because the data is static inside the URL.
+        </p>
+    {% else %}
+        <h3>Hi {{name}}! I'm Elmo!</h3>
+        <p>
+            You came into my house using the GET method. <br><br>
+            This method sends data through the URL as query paramaters (things that appear after the ?), meaning that all the information you submitted in the form on the landing page is visible in the URL. <br><br>
+            If you used the POST method to enter, the only visible difference would be that the information you submitted is no longer visibile in the URL. This is because POST submits data through the "request body", which is why the method required to request a paramater uses request.form.get instead of request.args.get (which is what GET uses).
 
-
-    <h3>
-      Enter your username below to proceed.
-    </h3>
-    <form action="/auth">
-      <input type="text" name="username">
-      <input type="submit" name="sub1">
-    </form>
-    <br>
+        </p>
+    {% endif %}
   </body>
 
 </html>

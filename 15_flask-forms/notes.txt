@@ -1,38 +1,9 @@
-Elmos_Cheez-its: Amanda Tan, Ethan Sie, Aidan Wong
+Finding Elmo: Ethan Sie, Aidan Wong, Qianjun Zhou
 SoftDev
-K14 - User Input with Flask
-2024-10-07
-time spent: 0.7
+K15 - Flask Inputs With Different Requests
+2024-10-08
+time spent: 0.8
 
-DISCO:
-* A: Possible to run with all commented out lines re-enabled, but ONLY if ?username="value" is present in the url
-* Original Code without removing any comments:
-    * Submit button functions regardless of any input in the text box (results in an empty username="")
-    * Screen after submission is the same regardless of the username (only thing that changes is the username="" value in the URL)
-    * URL has queries (indicated by the ?) => Specifies the parameters
-* When the methods GET and POST are added to the route, the only thing that appears is the GET request in the terminal (likely due to there being no POST functions in the code)
-* print(app) in the disp_loginpage() function prints "<Flask 'app'>
-* print(request) fetches the host server address: "<Request 'http://127.0.0.1:5000/>
-* request.args contains the list of requests or user inputs in the system
-	* in the index page, request.args contains an empty list: ImmutableMultiDict([])
-	* in the /auth route, the list contains "[('username', '{user}'), ('sub1', 'Submit')]"
-* request.args['{variable}'] contains the value of the user input associated with the variable
-	* here, request.args['(username)'] contains the user input prompted on the index page
-* request.headers contains information such as the host, connection, language
------------------------------------------------------------------------
-
-
-Q/C/C:
-* When the user submits a username, it dosen't seem to be sanitized. However, are POST methods required in order for the user to do anything malicous? (As the only methods that appear are GET, so nothing is actually sent to the server) ==> Further tests showed that adding a variable to a HTML is a POST request
-    * Found that you can inject JS code using script tags by inputting it as the username, which would run upon clicking submit
-* Is there a way to stop commands inside a custom module from running immediately upon import?
-* What is the difference between a MultiDict and a regular Dict? (When printing request.args in the terminal)
-* Is there a way to alter the headers when printing request.headers in the terminal?
------------------------------------------------------------------------
-
-
-OTHER?
-* Are there alternatives to GET and POST, or are those the only ways to interact with servers?
-* What are effective ways to sanitize user inputs?
-* 
------------------------------------------------------------------------
+* POST causes a form resubmission confirmation, while GET does not
+* POST uses request.form, while GET uses request.args
+* Information submitted with POST dosen't appear in URL, but does when submitted with GET
