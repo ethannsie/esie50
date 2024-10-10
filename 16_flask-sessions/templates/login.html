@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!--
-    Finding Elmo: Ethan Sie, Aidan Wong, Qianjun Zhou
+    Elmos_Cheez-its: Amanda Tan, Ethan Sie, Aidan Wong
     SoftDev
-    K15 - Flask Inputs With Different Requests
-    2024-10-08
-    time spent: 0.8
+    K16 - Flask Sessions
+    2024-10-09
+    time spent: 1.0
  -->
 
 
@@ -16,19 +16,15 @@
 
   <body>
     <h1>
-        Finding Elmo: Ethan Sie, Aidan Wong, Qianjun Zhou
+      Elmos_Cheez-its: Amanda Tan, Ethan Sie, Aidan Wong
     </h1>
     <h3>
-      Hi! Give me your name to enter my house.
+      Hi! Give me your name and password to enter my house.
     </h3>
-    <form action="/auth" method="GET">
-      <input type="text" name="name">
-      <input type="submit" name="sub1" value="Enter with GET">
-    </form>
-    <br>
-    <form action="/auth" method="POST">
-        <input type="text" name="name">
-        <input type="submit" name="sub1" value="Enter with POST">
+    <form method="POST">
+        <input type="text" placeholder="Username" name="name">
+        <input type="password" placeholder="Password" name="password">
+        <input type="submit" value="Enter">
       </form>
     <br>
   </body>

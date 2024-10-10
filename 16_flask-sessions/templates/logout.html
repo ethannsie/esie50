@@ -1,36 +1,23 @@
 <!DOCTYPE html>
 <!--
-    Finding Elmo: Ethan Sie, Aidan Wong, Qianjun Zhou
+    Elmos_Cheez-its: Amanda Tan, Ethan Sie, Aidan Wong
     SoftDev
-    K15 - Flask Inputs With Different Requests
-    2024-10-08
-    time spent: 0.8
+    K16 - Flask Sessions
+    2024-10-09
+    time spent: 1.0
  -->
 
-
-<html>
-
-  <head>
+ <head>
     <title> Elmo's Door </title>
   </head>
-
   <body>
     <h1>
-        Finding Elmo: Ethan Sie, Aidan Wong, Qianjun Zhou
-    </h1>
-    <h3>
-      Hi! Give me your name to enter my house.
-    </h3>
-    <form action="/auth" method="GET">
-      <input type="text" name="name">
-      <input type="submit" name="sub1" value="Enter with GET">
-    </form>
-    <br>
-    <form action="/auth" method="POST">
-        <input type="text" name="name">
-        <input type="submit" name="sub1" value="Enter with POST">
-      </form>
-    <br>
+        Elmos_Cheez-its: Amanda Tan, Ethan Sie, Aidan Wong
+      </h1>
+      <h3>
+        Bye Bye {{username}}. See you next time.
+      </h3>
+    <button onclick='window.location.href="/"'>Log back in</button>
   </body>
 
-</html>
+ </html>

@@ -1,0 +1,18 @@
+Elmos_Cheez-its: Amanda Tan, Ethan Sie, Aidan Wong
+SoftDev
+K16 - Flask Sessions
+2024-10-09
+time spent: 1.0
+
+* Cookies are saved onto the users browser (or client side), while sessions are stored server side
+* For Log In Functionality (Assuming user has already signed up)
+    * User info (username and password) is stored inside a list in database (Will use python list for this)
+    * When user logs in, server gets the username and password inputted and compares them with the database/python list
+    * If info is correct, server creates a session that stores info like the username (better practice to not include password for security); This is sent to the browser using a signed session cookie AND stored in a database/python list
+    * When user refreshes page, browser automatically sends the signed session cookie back to the server --> The server then checks if the session id matches with anything in the database/python list
+        * If it exists, it gives the user a logged in state
+        * If it dosen't exist, it prompts the user to log in again/sends to default screen
+* Login is login screen, Response is logged in state homepage, logout is a confirmation screen for logging out
+* If secret_key is not set, there will be a runtime error when attempting to create and use sessions (sessions require a secret_key)
+* Usernames and passwords are case sensitive (Makes passwords more secure, but usernames more inconvenient)
+* Flask allows you to import a session object, which behaves like a dictionary. It allows you to store specific data across HTTP requests.
