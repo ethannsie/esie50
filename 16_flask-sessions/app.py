@@ -30,8 +30,6 @@ def disp_loginpage():
         #print(name)
         #print(password)
 
-        print(users)
-
         if name in users and users[name] == password:
             session_id = os.urandom(16)
             sessions[session_id] = {'username': name}
