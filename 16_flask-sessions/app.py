@@ -27,8 +27,8 @@ def disp_loginpage():
         name = request.form.get('name')
         password = request.form.get('password')
 
-        print(name)
-        print(password)
+        #print(name)
+        #print(password)
 
         if name in users and users[name] == password:
             session_id = os.urandom(16)
