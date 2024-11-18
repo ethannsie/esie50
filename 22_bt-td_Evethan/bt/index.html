@@ -1,0 +1,166 @@
+<!doctype html>
+<!------- CODE TO BE ADAPTED FROM TEAM BUN
+Ethan Sie
+Evethan - Eve, Ethan
+Softdev
+K22 - bt-td
+2024-11-20
+Time spent: ???
+------>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="custom.css">
+    </head>
+
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+
+        <div class="text-center">
+            <header>
+                <h1>Bootstrap</h1>
+                <p> Bootstrap is a front-end framework that provides HTML and CSS templates for typography, buttons, etc.
+                    It also allows the ability to easilty create responsive designs.
+                    To load bootstrap, copy-paste the stylesheet link into your head before all other stylesheets.
+                </p>
+                <p>
+                        You should paste:
+                        </p>
+                        <p>
+                        <textarea><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"></textarea>
+                </p>
+                <pre><code>[The whole thing above is what the header looks like]</code></pre>
+            </header>
+            <br>
+        <div class="container-fluid">
+            <h2> Navigation Bar </h2>
+            <div class="section">
+                <div class="sub">
+                    <ul class="nav justify-content-center" style="background-color: aliceblue;">
+                          <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                      </ul>
+                </div>
+                <div class="sub">
+                    This is the built in nav bar with the css already done. You are able to have sections of the nav bar that is disabled which just doesn't redirect.
+                </div>
+            </div>
+
+            <h2> Progress Bar</h2>
+            <div class="section">
+                <div class="sub">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                            60%
+                        </div>
+                    </div>
+                </div>
+                <div class="sub">
+                    Bootstrap has a built in progress bar that can take in values to make it easy to display these kinds of graphs.
+                </div>
+            </div>
+
+            <h2> Grid system</h2>
+            <div class="section">
+                <div class="sub">
+                    <!-- Display grid  -->
+                    <div class="row">
+                        <div class="col">
+                            Row 1 Column 1
+                        </div>
+                        <div class="col">
+                            Row 1 Column 2
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            Row 2 Column 1
+                        </div>
+                        <div class="col">
+                            Row 2 Column 2
+                        </div>
+                        <div class="col">
+                            Row 2 Column 3
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            Row 3 Column 1
+                        </div>
+                        <div class="col">
+                            Row 3 Column 2
+                        </div>
+                        <div class="col">
+                            Row 3 Column 3
+                        </div>
+                        <div class="col">
+                            Row 3 Column 4
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sub">
+                    <!-- Description -->
+                    Bootstrap has a fluid grid system that scales according to the viewport size.
+                    Rows create horizontal groups of twelve columns.
+                    Columns are specified by the number of columns you wish to span.
+                    For example, three equal columns woule use three .col-xs-4.
+                </div>
+            </div>
+
+            <h2> Tables</h2>
+            <div class="section">
+                <div class="sub">
+                    <table class="table table-hover table-striped" style="border: 1px solid grey">
+                        <thead>
+                            <tr>
+                                <th> # </th>
+                                <th> Animal</th>
+                                <th> Legs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td> 1</td>
+                                <td> Duck </td>
+                                <td> Two</td>
+                            </tr>
+                            <tr>
+                                <td> 2</td>
+                                <td> Cow </td>
+                                <td> Four</td>
+                            </tr>
+                            <tr>
+                                <td> 3</td>
+                                <td> Spider </td>
+                                <td> Eight</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="sub">
+                    There are many built in tables and built in table colors. Here we are just showing off a basic table highlight where if you hover your mouse over one part of the table it will get highlighted.
+                </div>
+            </div>
+
+        </div> <!-- container-fluid    -->
+        </div> <!-- text-center    -->
+    </body>
+</html>
