@@ -1,0 +1,14 @@
+Ethan Sie
+Chewy_Chupucabras
+SoftDev
+K28: "Crash Test DOMmies"
+2025-01-07
+time spent: 5 mins
+
+DISCO:
+* Script src linking the javascript file doesn't have to be at the top
+* You can integrate javascript in line to specific IDs
+
+QCC:
+* We never implemented GCD. Not sure if we had to here.
+* Are there any instances where in-line javascript is cleaner?

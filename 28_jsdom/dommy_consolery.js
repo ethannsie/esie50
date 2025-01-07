@@ -91,6 +91,7 @@ function fib(n) {
   return fib(n - 1) + fib(n - 2);
 }
 
+// WE DIDNT DO GCD
 
 // In addition to the style shown above,
 //  you are encouraged to test drive the "arrow function syntax" as shown below.
