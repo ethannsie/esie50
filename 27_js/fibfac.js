@@ -1,9 +1,11 @@
-  # Tanzeem Hasan, Ethan Sie, Brian Liu
-  # Chewy_Chupucabras
-  # SoftDev
-  # K27: JS is just Scheme with Java syntax
-  # 2025-01-06
-  # time spent: 10 mins
+/* 
+Tanzeem Hasan, Ethan Sie, Brian Liu
+Chewy_Chupucabras
+SoftDev
+K27: JS is just Scheme with Java syntax
+2025-01-06
+time spent: 10 mins
+*/
 
 function fac(n) {
   if (n === 0) {
