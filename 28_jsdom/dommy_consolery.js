@@ -1,38 +1,11 @@
 /*
-  your PPTASK:
-  
-  First, familiarize yourself with the given html file for this work.
-
-      then...
-
-  Test drive each bit of code in this file,
-  and insert comments galore, indicating anything
-  you discover,
-  have questions about,
-  or otherwise deem notable.
-
-  Have the given html file open as you work.
-  
-  Write with your future self or teammates in mind.
-  
-  If you find yourself falling out of flow mode, consult 
-  - other teams
-  - MDN
-
-  A few comments have been pre-filled for you...
-  
-  (delete this block comment once you are done)
+Ethan Sie
+Chewy_Chupucabras
+SoftDev
+K28: "Crash Test DOMmies"
+2025-01-07
+time spent: 15 mins
 */
-
-
-
-
-
-// Team Phantom Tollbooth :: Clyde Sinclair, Fierce Dragon 
-// SoftDev pd0
-// K28 -- Getting more comfortable with the dev console and the DOM
-// 2025-01-07t
-// --------------------------------------------------
 
 
 //send diagnostic output to console
@@ -44,7 +17,7 @@ var j = 20;
 
 
 //assign an anonymous fxn to a var
-var f = function(x) 
+var f = function(x)
 {
     var j=30;
     return j+x;
@@ -104,6 +77,19 @@ var stripe = function()
 // FIB
 // FAC
 // GCD
+function fac(n) {
+  if (n === 0) {
+    return 1;
+  }
+  return n * fac(n - 1);
+}
+
+function fib(n) {
+  if (n <= 1) {
+    return n;
+  }
+  return fib(n - 1) + fib(n - 2);
+}
 
 
 // In addition to the style shown above,
