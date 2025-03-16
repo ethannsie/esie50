@@ -4,18 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .story-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .story-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .story-list li:last-child {
+            border-bottom: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Collaborative Storytelling Wiki</h1>
-    <p>Hello, {{ session.username }}!</p>
-    <a href="{{ url_for('create_story') }}">Create a new story</a>
-    <a href="{{ url_for('logout') }}">Logout</a>
-    <ul>
-        {% for story in stories %}
-            <li>
-                <a href="{{ url_for('update_story', story_id=story[0]) }}">{{ story[1] }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">Story Wiki</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('create_story') }}">Create a new story</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="mt-5">Welcome to the Collaborative Storytelling Wiki</h1>
+        <p class="lead">Hello, {{ session.username }}!</p>
+        <ul class="story-list">
+            {% for story in stories %}
+                <li>
+                    {% if story[2] == 1 %}
+                        <a href="{{ url_for('view_story', story_id=story[0]) }}">{{ story[1] }}</a>
+                    {% else %}
+                        {{ story[1] }}
+                    {% endif %}
+                    {% if story[2] == 0 %}
+                        <a class="btn btn-sm btn-primary ml-2" href="{{ url_for('update_story', story_id=story[0]) }}">Update Story</a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

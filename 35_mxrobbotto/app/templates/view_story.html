@@ -3,31 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a New Story</title>
+    <title>View Story</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             padding-top: 50px;
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
+        }
+        .story-content {
+            list-style-type: none;
+            padding: 0;
+        }
+        .story-content li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .story-content li:last-child {
+            border-bottom: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-5">Create a New Story</h1>
-        <form action="{{ url_for('create_story') }}" method="post">
-            <div class="form-group">
-                <label for="title">Title:</label>
-                <input type="text" class="form-control" id="title" name="title" required>
-            </div>
-            <div class="form-group">
-                <label for="content">Content:</label>
-                <textarea class="form-control" id="content" name="content" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Create Story</button>
-        </form>
+        <h1 class="mt-5">View Story</h1>
+        <ul class="story-content">
+            {% for part in story_content %}
+                <li>{{ part[0] }}</li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Back to Homepage</a>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

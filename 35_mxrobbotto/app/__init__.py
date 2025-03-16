@@ -104,14 +104,13 @@ def index():
     conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     cursor.execute('''
-        SELECT stories.id, stories.title
+        SELECT stories.id, stories.title,
+        (SELECT COUNT(*) FROM contributions WHERE story_id = stories.id AND user_id = ?) as contributed
         FROM stories
-        JOIN contributions ON stories.id = contributions.story_id
-        WHERE contributions.user_id = ?
     ''', (user_id,))
     stories = cursor.fetchall()
     conn.close()
-    return render_template('index.html', stories=stories)
+    return render_template('index.html', stories=stories, user_id=user_id)
 
 # Create a new story
 @app.route('/create_story', methods=['GET', 'POST'])
@@ -164,6 +163,30 @@ def update_story(story_id):
 
     return render_template('update_story.html', story_id=story_id, latest_content=latest_content[0] if latest_content else '')
 
+# View a story
+@app.route('/view_story/<int:story_id>')
+def view_story(story_id):
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
+    user_id = session['user_id']
+    conn = sqlite3.connect('database.db')
+    cursor = conn.cursor()
+
+    # Check if the user has contributed to the story
+    cursor.execute('SELECT 1 FROM contributions WHERE story_id = ? AND user_id = ?', (story_id, user_id))
+    user_contributed = cursor.fetchone()
+
+    if not user_contributed:
+        flash('You can only view stories you have contributed to.', 'danger')
+        return redirect(url_for('index'))
+
+    cursor.execute('SELECT content FROM contributions WHERE story_id = ? ORDER BY timestamp', (story_id,))
+    story_content = cursor.fetchall()
+    conn.close()
+
+    return render_template('view_story.html', story_id=story_id, story_content=story_content)
+
 if __name__ == '__main__':
     init_db()
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=True)
