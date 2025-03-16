@@ -1,3 +1,10 @@
+# Jacob Lukose, Ethan Sie
+# DigitalSie
+# SoftDev
+# K35: mxrobbotto
+# 2025-03-17
+# time spent: 2 hours
+
 from flask import Flask, render_template, redirect, url_for, request, session, flash
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash

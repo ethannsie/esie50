@@ -1,0 +1,16 @@
+# Jacob Lukose, Ethan Sie
+# DigitalSie
+# SoftDev
+# K35: mxrobbotto
+# 2025-03-17
+# time spent: 2 hours
+
+DISCO:
+- Copilot needs to be directed slowly with 1-2 prompts at a time.
+- Generally good at taking error messages and fixing code
+- Did not leave as many comments as we'd expect.
+
+Q/C/C:
+q0: It took 13 prompts for us to get the project fully implemented and it took us 1 more to make the website look nice.
+q1: Yes, we caught a lot of errors in the implementation of the project directions, but we were able to go step by step to correct them with the bot based on what we observed.
+q2: The bot's output is definitely a lot more efficient, but it does not have the foresight that our team had in terms of planning and implementation. The bot needed a little bit of a push to get to the finish line. But once it gets there, it's very good at styling the base website to look nice.
