@@ -1,0 +1,12 @@
+# JEWZ
+# SoftDev
+# K37: SERVE
+# 2025-03-20
+# time spent: 2 hours
+
+DISCO:
+- 
+
+Q/C/C:
+q0: How do you set up the firewall on Nginx?
+q1: Does the website keep running forever (if I exit my session on droplet but don't close the server)?

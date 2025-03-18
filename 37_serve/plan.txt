@@ -1,0 +1,11 @@
+# JEWZ
+# SoftDev
+# K37: SERVE
+# 2025-03-20
+# time spent: 2 hours
+
+1. Ensure droplet is up and running.
+2. Install Nginx on droplet server
+3. Install necessary python packages on ubuntu serve
+4. Set up flask server on ubuntu server
+5. Configure gunicorn https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-22-04
