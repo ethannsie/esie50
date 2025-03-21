@@ -9,3 +9,5 @@
 3. Install necessary python packages on ubuntu serve
 4. Set up flask server on ubuntu server
 5. Configure gunicorn https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-22-04
+
+NO domain name!
